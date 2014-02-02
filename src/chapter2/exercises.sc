@@ -8,6 +8,10 @@ println(signum(7))
 println(signum(-7))
 println(signum(0))
 
+//Exercise 2
+//The value is () and the type is Unit
+println({})
+
 //Exercise 3
 var x = ()
 var y = 1
