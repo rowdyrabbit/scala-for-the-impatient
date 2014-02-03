@@ -18,11 +18,40 @@ var y = 1
 x = y = 1
 //Exercise 4
 for (i <- 10 to 1 by -1) println(i)
+
+
+
+
+
+
+
+
+
 //Exercise 5
 def countdown(n: Int) { //it's a procedure because there is no '='. Return type will be 'Unit'
   for (i <- n to 0 by -1) println(i)
 }
 countdown(20)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Exercise 6
 var acc = 1
