@@ -16,10 +16,8 @@ println({})
 var x = ()
 var y = 1
 x = y = 1
-
 //Exercise 4
 for (i <- 10 to 1 by -1) println(i)
-
 //Exercise 5
 def countdown(n: Int) { //it's a procedure because there is no '='. Return type will be 'Unit'
   for (i <- n to 0 by -1) println(i)
@@ -30,12 +28,10 @@ countdown(20)
 var acc = 1
 for (c <- "Hello") acc *= c.toInt
 println("unicode product is: "+acc)
-
 //Exercise 7
 var product = 1
 "Hello".foreach((c: Char) => product *=c)
 println("unicode product without for loop is "+product)
-
 //Exercise 8
 def product(input: String) = {
   var acc = 1
@@ -43,7 +39,6 @@ def product(input: String) = {
   acc
 }
 println(product("Hello"))
-
 //Exercise 9
 def calculateProduct(input: String, product: Int = 1) : Int = {
   if (input.length == 0) product
@@ -66,9 +61,6 @@ power(2, 1)
 power(2, 0)
 power(2, 2)
 power(2, -1)
-
-
-
 
 
 
