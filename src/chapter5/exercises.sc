@@ -1,4 +1,4 @@
-import scala.reflect.BeanProperty
+import scala.beans.BeanProperty
 
 //Exercise 1
 class Counter {
@@ -123,7 +123,10 @@ class Car(val manufacturer: String, val modelName: String, val modelYear: Int = 
 //  //Plus getter methods for all fields, and a setter for the licensePlate field
 //}
 
-//Exercise 10
+//Exercise 10 - I prefer the primary constructor in the first class example, it's simpler
+class Employee(val name: String, var salary: Double) {
+  def this() {this("", 0.0)}
+}
 class Employee {
   private var _name: String = ""
   var salary: Double = 0.0
@@ -136,7 +139,6 @@ class Employee {
 
   def name = _name
 }
-
 val emp = new Employee("John", 3200)
 println("Employee: "+emp.name + " has a salary of: "+emp.salary)
 emp.salary = 4000
