@@ -124,6 +124,22 @@ class Car(val manufacturer: String, val modelName: String, val modelYear: Int = 
 //}
 
 //Exercise 10
+class Employee {
+  private var _name: String = ""
+  var salary: Double = 0.0
 
+  def this(name: String, salary: Double) {
+    this()
+    _name = name
+    this.salary = salary
+  }
+
+  def name = _name
+}
+
+val emp = new Employee("John", 3200)
+println("Employee: "+emp.name + " has a salary of: "+emp.salary)
+emp.salary = 4000
+println("After a pay rise employee: "+emp.name + " has a salary of: "+emp.salary)
 
 
