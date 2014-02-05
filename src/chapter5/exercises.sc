@@ -51,3 +51,17 @@ println("23:20 is before 23:30 is: "+ new Time(23, 20).before(new Time(23, 30)))
 println("11:00 is before 11:00 is: "+ new Time(11, 0).before(new Time(11, 0)))
 println("12:00 is before 12:01 is: "+ new Time(12, 1).before(new Time(12, 0)))
 
+//Exercise 4
+class Time(val hrs: Int, val mins: Int) {
+
+  def minsSinceMidnight = hrs * 60 + mins
+
+  def before(other: Time) : Boolean = {
+
+    if (other.minsSinceMidnight > this.minsSinceMidnight) true
+    else false
+  }
+}
+println("23:20 is before 23:30 is: "+ new Time(23, 20).before(new Time(23, 30)))
+println("11:00 is before 11:00 is: "+ new Time(11, 0).before(new Time(11, 0)))
+println("00:01 is before 23:59 is: "+ new Time(0, 1).before(new Time(23, 59)))
