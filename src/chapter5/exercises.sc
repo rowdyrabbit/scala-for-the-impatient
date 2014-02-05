@@ -1,3 +1,5 @@
+import scala.reflect.BeanProperty
+
 //Exercise 1
 class Counter {
   private var value: Int = 0
@@ -23,7 +25,6 @@ class BankAccount {
   def withdraw(amount: Double) = {
     if (amount <= currBalance) currBalance -= amount
   }
-
   def balance = currBalance
 }
 
@@ -65,3 +66,12 @@ class Time(val hrs: Int, val mins: Int) {
 println("23:20 is before 23:30 is: "+ new Time(23, 20).before(new Time(23, 30)))
 println("11:00 is before 11:00 is: "+ new Time(11, 0).before(new Time(11, 0)))
 println("00:01 is before 23:59 is: "+ new Time(0, 1).before(new Time(23, 59)))
+
+//Exercise 5
+class Student(@BeanProperty var name: String, @BeanProperty var id: Int) {
+}
+
+val student = new Student("Test", 1)
+println(student.getName()+ " "+student.getId())
+student.setName("Fred")
+println(student.getName()+ " "+student.getId())
