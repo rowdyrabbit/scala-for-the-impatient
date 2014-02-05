@@ -80,10 +80,15 @@ println(student.getName()+ " "+student.getId())
 class Person(var age: Int) {
     if (age < 0 ) age = 0
 }
-
 var person = new Person(-2)
 println("Negative age has been reset to: "+person.age)
-
 //Chapter 7
+class Person(val name: String) {  //val because if we allow updates to name then the firstName and lastName methods will be incorrect/out of sync
+  def firstName = name.split(' ')(0)
+  def lastName = name.split(' ')(1)
+}
+val person = new Person("Mary Lamb")
+println(person.firstName)
+println(person.lastName)
 
 
