@@ -75,3 +75,15 @@ val student = new Student("Test", 1)
 println(student.getName()+ " "+student.getId())
 student.setName("Fred")
 println(student.getName()+ " "+student.getId())
+
+//Chapter 6
+class Person(var age: Int) {
+    if (age < 0 ) age = 0
+}
+
+var person = new Person(-2)
+println("Negative age has been reset to: "+person.age)
+
+//Chapter 7
+
+
