@@ -33,3 +33,21 @@ println("balance is: "+myAccount.balance)
 myAccount.withdraw(30.5f)
 println("balance is: "+myAccount.balance)
 
+//Exercise 3
+class Time(val hrs: Int, val mins: Int) {
+
+  def before(other: Time) : Boolean = {
+    if (other.hrs > this.hrs) {
+      true
+    } else if (other.hrs == this.hrs) {
+       if(other.mins > this.mins) true
+       else false
+    } else {
+      false
+    }
+  }
+}
+println("23:20 is before 23:30 is: "+ new Time(23, 20).before(new Time(23, 30)))
+println("11:00 is before 11:00 is: "+ new Time(11, 0).before(new Time(11, 0)))
+println("12:00 is before 12:01 is: "+ new Time(12, 1).before(new Time(12, 0)))
+
