@@ -76,13 +76,14 @@ println(student.getName()+ " "+student.getId())
 student.setName("Fred")
 println(student.getName()+ " "+student.getId())
 
-//Chapter 6
+//Exercise 6
 class Person(var age: Int) {
     if (age < 0 ) age = 0
 }
 var person = new Person(-2)
 println("Negative age has been reset to: "+person.age)
-//Chapter 7
+
+//Exercise 7
 class Person(val name: String) {  //val because if we allow updates to name then the firstName and lastName methods will be incorrect/out of sync
   def firstName = name.split(' ')(0)
   def lastName = name.split(' ')(1)
@@ -90,5 +91,39 @@ class Person(val name: String) {  //val because if we allow updates to name then
 val person = new Person("Mary Lamb")
 println(person.firstName)
 println(person.lastName)
+
+//Exercise 8
+class Car(val manufacturer: String, val modelName: String, val modelYear: Int = -1, var licensePlate: String = "") {
+  //Only one constructor is needed!
+}
+
+//Exercise 9 - don't really want to do this, it's so painful!
+//class Car {
+//  private String manufacturer;
+//  private String modelName;
+//  private int modelYear = -1;
+//  private String licensePlate = "";
+//
+//  public Car(String manufacturer, String modelName) {
+//    this.manufacturer = manufacturer;
+//    this.modelName = modelName;
+//  }
+//  public Car(String manufacturer, String modelName, int modelYear) {
+//    this(manufacturer, modelName);
+//    this.modelYear = modelYear;
+//  }
+//  public Car(String manufacturer, String modelName, String licensePlate) {
+//    this(manufacturer, modelName);
+//    this.licensePlate = licensePlate;
+//  }
+//  public Car(String manufacturer, String modelName, String licensePlate, int modelYear) {
+//    this(manufacturer, modelName, licensePlate);
+//    this.modelYear = modelYear;
+//  }
+//  //Plus getter methods for all fields, and a setter for the licensePlate field
+//}
+
+//Exercise 10
+
 
 
