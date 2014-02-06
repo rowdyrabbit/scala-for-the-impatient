@@ -12,10 +12,8 @@ object Conversions {
   def milesToKilometre(miles: Double) = {
      miles * 1.609344
   }
-
-  println("2 inches is: "+inchesToCentimeter(2)+ "cm")
-  println("1 gallon is: "+gallonsToLiter(1)+ "L")
-  println("13.1 miles is: "+milesToKilometre(13.1)+ "km")
-
-
 }
+println("2 inches is: "+Conversions.inchesToCentimeter(2)+ "cm")
+println("1 gallon is: "+Conversions.gallonsToLiter(1)+ "L")
+println("13.1 miles is: "+Conversions.milesToKilometre(13.1)+ "km")
+
