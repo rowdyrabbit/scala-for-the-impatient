@@ -44,3 +44,12 @@ object Point {
 
 
 //Exercise 5
+object Reverse extends App {
+  val reverseArgs = args.reverse
+
+  for (i <-0 until reverseArgs.size) {
+    print(reverseArgs(i)+ " ")
+  }
+}
+Reverse.main(Array("Hello", "World"))
+
