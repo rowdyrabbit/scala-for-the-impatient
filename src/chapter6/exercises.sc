@@ -36,3 +36,11 @@ object Origin extends java.awt.Point
 //change the coordinates of the point, thereby changing the 'origin'. These methods can also be called from anywhere
 //leading to issues with concurrency as well as making the state of the object more difficult to reason about
 
+//Exercise 4
+class Point(x: Int, y: Int)
+object Point {
+  def apply(x: Int, y: Int) = new Point(x, y)
+}
+
+
+//Exercise 5
