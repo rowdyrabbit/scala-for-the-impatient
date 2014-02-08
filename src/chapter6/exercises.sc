@@ -65,5 +65,16 @@ object PlayingSuits extends Enumeration {
 
 println(PlayingSuits.values)
 
+//Exercise 7
+import PlayingSuits._
+def isRed(suit: PlayingSuits.Value) : Boolean = {
+  if (suit == PlayingSuits.Hearts || suit == PlayingSuits.Diamonds) true
+  else false
+}
+isRed(PlayingSuits.Diamonds)
+
+//Exercise 8
+
+
 
 
