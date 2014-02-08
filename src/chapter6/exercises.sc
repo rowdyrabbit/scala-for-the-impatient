@@ -43,6 +43,8 @@ object Point {
 }
 
 
+
+
 //Exercise 5
 object Reverse extends App {
   val reverseArgs = args.reverse
@@ -52,4 +54,16 @@ object Reverse extends App {
   }
 }
 Reverse.main(Array("Hello", "World"))
+
+//Exercise 6
+object PlayingSuits extends Enumeration {
+  val Clubs = Value( "\u2663")
+  val Diamonds = Value("\u2666")
+  val Hearts = Value("\u2665")
+  val Spades = Value("\u2660")
+}
+
+println(PlayingSuits.values)
+
+
 
