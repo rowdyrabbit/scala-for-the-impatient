@@ -72,8 +72,27 @@ def isRed(suit: PlayingSuits.Value) : Boolean = {
   else false
 }
 isRed(PlayingSuits.Diamonds)
-
 //Exercise 8
+object RGBColorCube extends Enumeration {
+  val White = Value(0xFFFFFF)
+  val Red = Value(0x0000FF)
+  val Green = Value(0x00FF00)
+  val Blue = Value(0xFF0000)
+  val Cyan = Value(0xFFFF00)
+  val Magenta = Value(0xFF00FF)
+  val Yellow = Value(0x00FFFF)
+  val Black = Value(0x000000)
+}
+
+for (color <- RGBColorCube.values) {
+  println(color.id)
+}
+
+
+
+
+
+
 
 
 
