@@ -40,4 +40,12 @@ j.put("test", 5)
 val result = convertJavaMapToScalaMap(j)
 result.toString()
 
+//Exercise 8
+//The impact of importing both java._ and javax._ means that any subpackages with the same name will conflict. I'd say this
+//is a bad idea, especially if there are classes in each of the packages with the same name.
+
+//Exercise 9
+
+
+
 
