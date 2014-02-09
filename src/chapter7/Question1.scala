@@ -12,7 +12,7 @@ package com.horstmann.impatient {
   class TryToSayHi {
 
     //The following won't compile because this package (com.horstmann.impatient) does not have access to the com.horstmann package
-    Utils.sayHi("I don't think I can say hi")
+    //Utils.sayHi("I don't think I can say hi")
   }
 }
 

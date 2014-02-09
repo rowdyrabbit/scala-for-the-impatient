@@ -2,11 +2,11 @@ package chapter7
 
 package object random {
 
-  private[random] var prev = 0
+  private[random] var previous = 0
 
   def nextInt() : Int = {
-    val next = (previous * 1664525) + (1013904223 % math.pow(2, 32))
-    prev = next
+    val next = (previous * 1664525) + (1013904223 % math.pow(2, 32)).toInt
+    previous = next
     next
   }
 
@@ -15,7 +15,7 @@ package object random {
   }
 
   def setSeed(seed: Int) {
-    prev = seed
+    previous = seed
   }
 
 }

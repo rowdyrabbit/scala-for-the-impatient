@@ -11,8 +11,33 @@
 //Exercise 6
 import java.util.{HashMap => JavaHashMap}
 import scala.collection.mutable.{HashMap => ScalaHashMap}
-def copyFromJavaHashMapToScalaHashMap() = {
+import collection.JavaConversions.mapAsScalaMap
 
+def convertJavaMapToScalaMap(javaMap: JavaHashMap[String, Int]) = {
+  val s: ScalaHashMap[String, Int] = ScalaHashMap[String, Int]()
+  for ((k,v) <- javaMap)  s.put(k,v)
+  s
 }
+
+val j = new JavaHashMap[String, Int]()
+j.put("test", 5)
+val result = convertJavaMapToScalaMap(j)
+result.toString()
+
+//Exercise 7
+import java.util.{HashMap => JavaHashMap}
+import scala.collection.mutable.{HashMap => ScalaHashMap}
+
+def convertJavaMapToScalaMap(javaMap: JavaHashMap[String, Int]) = {
+  import collection.JavaConversions.mapAsScalaMap
+  val s: ScalaHashMap[String, Int] = ScalaHashMap[String, Int]()
+  for ((k,v) <- javaMap)  s.put(k,v)
+  s
+}
+
+val j = new JavaHashMap[String, Int]()
+j.put("test", 5)
+val result = convertJavaMapToScalaMap(j)
+result.toString()
 
 
