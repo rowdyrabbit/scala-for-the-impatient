@@ -52,6 +52,37 @@
 
 
 
+//Exercise 3
+{
+  abstract class Shape(shapeName: String) {
+    val name = shapeName
+    def canRoll(): Boolean
+  }
+
+  class Square extends Shape("square") {
+    def canRoll(): Boolean = {
+      false
+    }
+  }
+
+  class Circle extends Shape("circle") {
+    def canRoll() : Boolean = {
+      true
+    }
+  }
+
+  val square = new Square()
+  val circle = new Circle()
+  println("A square can roll = "+square.canRoll())
+  println("A circle can roll = "+circle.canRoll())
+
+}
+
+
+
+
+
+
 
 
 
