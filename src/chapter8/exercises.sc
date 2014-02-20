@@ -52,12 +52,6 @@
 
 
 
-
-
-
-
-
-
 //Exercise 3
 {
   abstract class Shape(shapeName: String) {
@@ -82,7 +76,6 @@
   println("A square can roll = "+square.canRoll())
   println("A circle can roll = "+circle.canRoll())
 }
-
 
 
 //Exercise 4
@@ -118,18 +111,39 @@
   println("created bundle: " + bundle.description + " with total price: "+bundle.price)
 }
 
+
 //Exercise 5
 {
   class Point(val x: Double, val y: Double) {
-
+    override def toString: String = {
+      "x=" + x + " & y=" + y
+    }
   }
-
   class LabeledPoint(val description: String, x: Double, y: Double) extends Point(x, y) {
-
   }
-
   val point = new LabeledPoint("home", 3.45566, 1.22333)
   println("created point: " + point.description + " with coordinates x="+point.x+" and y="+point.y)
+
+//Exercise 6
+  abstract class Shape {
+    def centerPoint: Point
+  }
+
+  class Rectangle(val width: Double, val height: Double) extends Shape {
+    def centerPoint: Point = {
+      new Point(width/2, height/2)
+    }
+  }
+  class Circle(val diameter: Double) extends Shape {
+    def centerPoint: Point = {
+      new Point(diameter/2, diameter/2)
+    }
+  }
+  val rect = new Rectangle(50, 70)
+  val circle = new Circle(100)
+  println("rectangle centre is: "+rect.centerPoint)
+  println("circle centre is: "+circle.centerPoint)
+
 }
 
 
