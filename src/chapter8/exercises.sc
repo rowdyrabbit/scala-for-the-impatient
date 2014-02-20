@@ -116,7 +116,20 @@
   bundle.add(new SimpleItem(3, "chocolate"))
   bundle.add(new SimpleItem(2.5, "fairy floss"))
   println("created bundle: " + bundle.description + " with total price: "+bundle.price)
+}
 
+//Exercise 5
+{
+  class Point(val x: Double, val y: Double) {
+
+  }
+
+  class LabeledPoint(val description: String, x: Double, y: Double) extends Point(x, y) {
+
+  }
+
+  val point = new LabeledPoint("home", 3.45566, 1.22333)
+  println("created point: " + point.description + " with coordinates x="+point.x+" and y="+point.y)
 }
 
 
