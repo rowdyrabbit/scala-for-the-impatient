@@ -52,6 +52,12 @@
 
 
 
+
+
+
+
+
+
 //Exercise 3
 {
   abstract class Shape(shapeName: String) {
@@ -75,6 +81,41 @@
   val circle = new Circle()
   println("A square can roll = "+square.canRoll())
   println("A circle can roll = "+circle.canRoll())
+}
+
+
+
+//Exercise 4
+{
+  abstract class Item() {
+    def price() : Double
+    def description() : String
+  }
+
+  class SimpleItem(override val price: Double, override val description: String) extends Item {
+  }
+
+  class Bundle extends Item {
+    private var items: List[Item] = List()
+    def price: Double = {
+      items.map(_.price).sum
+    }
+    def description: String = {
+      items.map(_.description).mkString(" & ")
+    }
+    def add(item : Item) = {
+      items = item :: items
+    }
+  }
+
+  val simple = new SimpleItem(5.55, "caramel popcorn")
+  println("created simple item: " + simple.description + " with price: "+simple.price)
+
+  var bundle = new Bundle()
+  bundle.add(new SimpleItem(4, "caramels"))
+  bundle.add(new SimpleItem(3, "chocolate"))
+  bundle.add(new SimpleItem(2.5, "fairy floss"))
+  println("created bundle: " + bundle.description + " with total price: "+bundle.price)
 
 }
 
