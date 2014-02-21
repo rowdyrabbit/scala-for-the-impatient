@@ -143,8 +143,23 @@
   val circle = new Circle(100)
   println("rectangle centre is: "+rect.centerPoint)
   println("circle centre is: "+circle.centerPoint)
-
 }
+
+
+//Exercise 7
+{
+  class Square(x: Int, y: Int, width: Int) extends java.awt.Rectangle(x, y, width, width)    {
+    def this(width: Int = 0)  {
+      this(0,0,width)
+    }
+  }
+
+  println(new Square)
+  println(new Square(10))
+  println(new Square(5,5,20))
+}
+
+
 
 
 
