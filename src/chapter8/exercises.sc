@@ -160,6 +160,22 @@
 }
 
 //Exercise 8
+//Compiled from "Person.scala"
+//public class chapter8.Person extends java.lang.Object{
+//  private final java.lang.String name;
+//  public java.lang.String name();
+//  public java.lang.String toString();
+//  public chapter8.Person(java.lang.String);
+//}
+
+//Compiled from "SecretAgent.scala"
+//public class chapter8.SecretAgent extends chapter8.Person{
+//  private final java.lang.String name;
+//  private final java.lang.String toString;
+//  public java.lang.String name();
+//  public java.lang.String toString();
+//  public chapter8.SecretAgent(java.lang.String);
+//}
 
 
 
