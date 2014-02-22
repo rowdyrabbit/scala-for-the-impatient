@@ -33,6 +33,14 @@
   //then the val in the subclass will not have been initialised. You cannot rely on the value of a val in the body of a constructor.
 }
 
+//Chapter 10
+{
+  class Stack[A] protected (protected val elems: List[A])
+
+  //It means that only classes that inherit from Stack can use this constructor. All other classes must use an auxiliary constructor.
+  //The meaning of protected in the case of the constructor parameter elems is that this val will have protected visibility too - that is, only
+  //classes that extend from Stack will be able to see this val.
+}
 
 
 
