@@ -159,6 +159,9 @@
   println(new Square(5,5,20))
 }
 
+//Exercise 8
+
+
 
 
 
