@@ -52,6 +52,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Exercise 3
 {
   abstract class Shape(shapeName: String) {
@@ -76,6 +91,9 @@
   println("A square can roll = "+square.canRoll())
   println("A circle can roll = "+circle.canRoll())
 }
+
+
+
 
 
 //Exercise 4
@@ -112,6 +130,9 @@
 }
 
 
+
+
+
 //Exercise 5
 {
   class Point(val x: Double, val y: Double) {
@@ -146,6 +167,12 @@
 }
 
 
+
+
+
+
+
+
 //Exercise 7
 {
   class Square(x: Int, y: Int, width: Int) extends java.awt.Rectangle(x, y, width, width)    {
@@ -158,6 +185,12 @@
   println(new Square(10))
   println(new Square(5,5,20))
 }
+
+
+
+
+
+
 
 //Exercise 8
 //Compiled from "Person.scala"
@@ -176,6 +209,8 @@
 //  public java.lang.String toString();
 //  public chapter8.SecretAgent(java.lang.String);
 //}
+
+
 
 
 
