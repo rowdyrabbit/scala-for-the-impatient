@@ -17,6 +17,10 @@ import scala.io.Source
 
 
 
+
+
+
+
 //Exercise 2
 {
   import io.Source
@@ -43,11 +47,32 @@ import scala.io.Source
 }
 
 
+
 //Exercise 3
 {
   for (w <- Source.fromFile("files/bigwords.txt", "UTF-8").mkString.split("\\s+")) {if (w.length > 12) println (w)}
 }
 
+
+//Exercise 4
+{
+  var sum: Double = 0
+  var max: Double = Double.MinValue
+  var min: Double = Double.MaxValue
+  var count: Int = 0
+  val tokens = Source.fromFile("files/floating_point.txt", "UTF-8").mkString.split("\\s+")
+  val numbers = for (w <- tokens) yield w.toDouble
+  for (n <- numbers) {
+    sum += n
+    count += 1
+    if (n > max) max = n
+    if (n < min) min = n
+  }
+  println("Sum is: "+sum)
+  println("Minimum is: "+min)
+  println("Maximum is: "+max)
+  println("Average is: "+sum/count)
+}
 
 
 
