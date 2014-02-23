@@ -1,3 +1,5 @@
+import scala.io.Source
+
 //Exercise 1
 {
   import io.Source
@@ -8,6 +10,8 @@
   }
   source.close
 }
+
+
 
 
 
@@ -37,6 +41,13 @@
   source.close
   println(outputString)
 }
+
+
+//Exercise 3
+{
+  for (w <- Source.fromFile("files/bigwords.txt", "UTF-8").mkString.split("\\s+")) {if (w.length > 12) println (w)}
+}
+
 
 
 
