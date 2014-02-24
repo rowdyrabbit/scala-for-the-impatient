@@ -25,6 +25,14 @@ import scala.io.Source
   println(tokens.mkString(", "))
 }
 
+//Exercise 8
+{
+  var source = Source.fromURL("http://horstmann.com/scala/", "UTF-8").mkString
+  val imgsrcPattern = """<\s*img[^>]*src\s*=\s*['"\s]*([^'"]+)['"\s]*[^>]*>""".r
+  for(imgsrcPattern(image) <- imgsrcPattern.findAllIn(source)) println("image: "+image)
+}
+
+
 
 
 
