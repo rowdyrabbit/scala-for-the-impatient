@@ -1,3 +1,6 @@
+import java.io.{FileInputStream, ObjectInputStream, FileOutputStream, ObjectOutputStream}
+
+import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
 //Exercise 6
@@ -13,6 +16,7 @@ import scala.io.Source
 
 
 
+
 //Exercise 7
 {
   val floats = "([0-9]\\.[0-9]*| \\.[0-9]*)".r
@@ -23,7 +27,6 @@ import scala.io.Source
       case Some(_) => false
       case None => true
   } )
-
   println(tokens.mkString(", "))
 }
 
@@ -33,6 +36,7 @@ import scala.io.Source
   val imgsrcPattern = """<\s*img[^>]*src\s*=\s*['"\s]*([^'"]+)['"\s]*[^>]*>""".r
   for(imgsrcPattern(image) <- imgsrcPattern.findAllIn(source)) println("image: "+image)
 }
+
 
 
 
@@ -50,4 +54,35 @@ import scala.io.Source
   ) yield classFile
   println("number of .clazz files: "+ classFiles.size)
 }
+
+//Chapter 10
+{
+  class Person(val name: String) extends Serializable {
+    private val friends = new ArrayBuffer[Person]
+    def addFriend(f : Person) = friends += f
+
+    override def toString: String = {
+      name + " (has friends: " + friends.map(_.name).mkString(", ") + ")"
+    }
+  }
+
+  val harry = new Person("harry")
+  val jack = new Person("jack")
+  val mary = new Person("mary")
+  mary.addFriend(jack)
+  mary.addFriend(harry)
+
+  val allPeeps = Array(harry, jack, mary)
+  val out = new ObjectOutputStream(new FileOutputStream("files/friends.obj"))
+  out.writeObject(allPeeps)
+  out.close
+
+  val in = new ObjectInputStream(new FileInputStream("files/friends.obj"))
+  val savedPeeps = in.readObject().asInstanceOf[Array[Person]]
+  for (p <- savedPeeps) println(p)
+}
+
+
+
+
 
