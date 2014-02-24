@@ -11,6 +11,8 @@ import scala.io.Source
   println(matches)
 }
 
+
+
 //Exercise 7
 {
   val floats = "([0-9]\\.[0-9]*| \\.[0-9]*)".r
@@ -34,7 +36,18 @@ import scala.io.Source
 
 
 
+//Exercise 9
+{
+  import java.io.File
 
-
-
+  def subdirs(dir: File) : Iterator[File] = {
+    val dirs = dir.listFiles.filter(_.isDirectory)
+    dirs.toIterator ++ dirs.toIterator.flatMap(subdirs _)
+  }
+  val classFiles = for (
+    dir <- subdirs(new File("."));
+    classFile <- dir.listFiles.filter(f => "\\.clazz".r.findFirstIn(f.getName).isDefined)
+  ) yield classFile
+  println("number of .clazz files: "+ classFiles.size)
+}
 
