@@ -11,4 +11,22 @@ import scala.io.Source
   println(matches)
 }
 
+//Exercise 7
+{
+  val floats = "([0-9]\\.[0-9]*| \\.[0-9]*)".r
+
+  val file = Source.fromFile("files/floats.txt").mkString
+  val tokens = file.split("\\s+").filter(
+    floats findFirstIn _ match {
+      case Some(_) => false
+      case None => true
+  } )
+
+  println(tokens.mkString(", "))
+}
+
+
+
+
+
 
