@@ -37,6 +37,16 @@ import java.awt.Point
   println(p4 < p1) //should be false (they are equal)
 }
 
+//Exercise 3
+{
+  //There's a lot of hierarchy going on here, you need to continually substitute up the inheritance hierarchy to determine the linearization of the BitSet class
+  //BitSet -> lin(BitSetLike), lin(SortedSet)
+  //BitSetLike, SortedSet, SortedSetLike, Sorted, Set, SetLike, Subtractable, GenSet, GenericSetTemplate, GenSetLike,
+  //Iterable, IterableLike, Equals, GenIterable, GenIterableLike, Traversable, GenTraversable, GenericTraversableTemplate,
+  //TraversableLike, GenTraversableLike, Parallelizable, TraversableOnce, GenTraversableOnce, FilterMonadic,
+  //HasNewBuilder
+}
+
 
 
 
