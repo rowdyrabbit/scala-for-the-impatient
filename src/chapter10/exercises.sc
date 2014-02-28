@@ -37,6 +37,8 @@ import java.awt.Point
   println(p4 < p1) //should be false (they are equal)
 }
 
+
+
 //Exercise 3
 {
   //There's a lot of hierarchy going on here, you need to continually substitute up the inheritance hierarchy to determine the linearization of the BitSet class
@@ -45,6 +47,44 @@ import java.awt.Point
   //Iterable, IterableLike, Equals, GenIterable, GenIterableLike, Traversable, GenTraversable, GenericTraversableTemplate,
   //TraversableLike, GenTraversableLike, Parallelizable, TraversableOnce, GenTraversableOnce, FilterMonadic,
   //HasNewBuilder
+}
+//Exercise 4
+{
+  trait Logger {
+    def log(msg: String) = {
+      println(msg)
+    }
+  }
+
+  trait CryptoLogger extends Logger {
+    val key: Int = 3
+    override def log(msg: String) = {
+
+      super.log((for (char <- msg) yield (cipherChar(char))).mkString )
+    }
+
+    def cipherChar(input: Int) : Char = {
+      //this should probably take into account cases where the input char + the key extend outside of the A-Z range and should roll over
+      (input + key).toChar
+    }
+  }
+
+  class Test extends Logger {
+    def test() {
+      log("logging some info")
+    }
+  }
+
+  val plain = new Test
+  plain.test()
+
+  val cryptoWith3 = new Test with CryptoLogger
+  cryptoWith3.test()
+
+  val cryptoWithNeg3 = new Test with CryptoLogger {
+    override val key = -3
+  }
+  cryptoWithNeg3.test()
 }
 
 
