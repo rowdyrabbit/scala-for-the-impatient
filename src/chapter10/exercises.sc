@@ -15,8 +15,6 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
 
 
 
-
-
 //Exercise 2
 {
   class OrderedPoint(x: Int, y: Int) extends java.awt.Point(x, y) with scala.math.Ordered[Point] {
@@ -41,9 +39,6 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
   println(p3 < p1) //should be false (p3 comes before p1 because p3's x value is larger than p1's)
   println(p4 < p1) //should be false (they are equal)
 }
-
-
-
 
 
 
@@ -95,8 +90,6 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
   }
   cryptoWithNeg3.test()
 }
-
-
 
 
 
@@ -181,24 +174,12 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
   for(i <- 1 to 10) println(file.read())
 }
 
+//Exercise 10
+{
+  class IterableInputStream extends java.io.InputStream with Iterable[Byte] {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+}
 
 
 
