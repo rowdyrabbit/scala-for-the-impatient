@@ -1,5 +1,6 @@
 import java.awt.Point
 import java.beans.{PropertyChangeListener, PropertyChangeSupport}
+import java.io.{BufferedInputStream, InputStream, FileInputStream}
 
 //Exercise 1
 {
@@ -10,6 +11,7 @@ import java.beans.{PropertyChangeListener, PropertyChangeSupport}
   egg.grow(10, 20)
   println("after growing: " + egg)
 }
+
 
 
 
@@ -39,6 +41,7 @@ import java.beans.{PropertyChangeListener, PropertyChangeSupport}
   println(p3 < p1) //should be false (p3 comes before p1 because p3's x value is larger than p1's)
   println(p4 < p1) //should be false (they are equal)
 }
+
 
 
 
@@ -95,6 +98,8 @@ import java.beans.{PropertyChangeListener, PropertyChangeSupport}
 
 
 
+
+
 //Exercise 5
 {
   trait PropertyChangeSupportCopy {
@@ -132,10 +137,26 @@ import java.beans.{PropertyChangeListener, PropertyChangeSupport}
 
   class JPanel extends JContainer
 
+}
+
+//Exercise 7
+{
 
 }
 
+//Exercise 8
+{
+   trait BufferedInputStreamCopy {
+      this: InputStream =>
+     //not a real implemntation of read...
+     override def read(): Int = {
+      5
+     }
+   }
 
+  val file = new FileInputStream("files/test.txt") with BufferedInputStreamCopy
+  for(i <- 1 to 10) print(file.read())
+}
 
 
 
