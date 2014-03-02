@@ -1,4 +1,5 @@
 import java.awt.Point
+import java.beans.{PropertyChangeListener, PropertyChangeSupport}
 
 //Exercise 1
 {
@@ -9,6 +10,8 @@ import java.awt.Point
   egg.grow(10, 20)
   println("after growing: " + egg)
 }
+
+
 
 
 
@@ -36,6 +39,9 @@ import java.awt.Point
   println(p3 < p1) //should be false (p3 comes before p1 because p3's x value is larger than p1's)
   println(p4 < p1) //should be false (they are equal)
 }
+
+
+
 
 
 
@@ -85,6 +91,29 @@ import java.awt.Point
     override val key = -3
   }
   cryptoWithNeg3.test()
+}
+
+
+
+//Exercise 5
+{
+  trait PropertyChangeSupportCopy {
+    val support = new PropertyChangeSupport()
+
+    def addPropertyChangeListener(listener: PropertyChangeListener) {
+      support.addPropertyChangeListener(listener)
+    }
+
+    def hasListeners(propertyName: String) : Boolean = {
+      support.hasListeners(propertyName)
+    }
+
+    //etc etc
+
+  }
+
+  val point = new java.awt.Point(3, 4) with PropertyChangeSupportCopy
+  point.hasListeners("anything")
 }
 
 
