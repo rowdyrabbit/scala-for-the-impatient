@@ -158,6 +158,48 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
   for(i <- 1 to 10) print(file.read())
 }
 
+//Exercise 9
+{
+  trait Logger {
+    def log(msg: String)
+  }
+
+  trait ConsoleLogger extends Logger {
+    def log(msg: String) = println(msg)
+  }
+
+  trait BufferedInputStreamCopy {
+    this: InputStream with Logger =>
+    //not a real implemntation of read...
+    override def read(): Int = {
+      log("reading...")
+      5
+    }
+  }
+
+  val file = new FileInputStream("files/test.txt") with BufferedInputStreamCopy with ConsoleLogger
+  for(i <- 1 to 10) println(file.read())
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
