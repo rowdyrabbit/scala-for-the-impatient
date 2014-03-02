@@ -116,6 +116,25 @@ import java.beans.{PropertyChangeListener, PropertyChangeSupport}
   point.hasListeners("anything")
 }
 
+//Exercise 6
+{
+  //Not possible in Java because it doesn't allow multiple inheritance. I.e. JContainer cannot extend both JComponent and Container.
+
+  class Component
+
+  class Container extends Component
+
+  trait JComponent extends Component
+
+  class JContainer extends Container with JComponent
+
+  class JButton extends JComponent
+
+  class JPanel extends JContainer
+
+
+}
+
 
 
 
