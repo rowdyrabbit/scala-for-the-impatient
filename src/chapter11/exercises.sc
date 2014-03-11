@@ -34,14 +34,28 @@
       val newDen = this.den * fraction.den
       new Fraction(newNum, newDen)
     }
+
+    def *(fraction: Fraction) : Fraction = {
+      val newNum = this.num * fraction.num
+      val newDen = this.den * fraction.den
+      new Fraction(newNum, newDen)
+    }
+
+    def /(fraction: Fraction) : Fraction = {
+      val newNum = this.num * fraction.den
+      val newDen = this.den * fraction.num
+      new Fraction(newNum, newDen)
+    }
   }
 
   val a = new Fraction(1, 2)
   val b = new Fraction(2, 8)
-
   println(a - b)
   println(a + b)
+  println(a * a)
+  println(b / a)
 }
+
 
 
 
