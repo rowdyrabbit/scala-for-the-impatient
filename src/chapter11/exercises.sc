@@ -64,8 +64,31 @@
 
 //Exercise 4
 {
+  object Money {
+    def apply(dollars: BigInt, cents: BigInt) = new Money(dollars, cents)
+  }
 
+  class Money(dollars: BigInt, cents: BigInt) {
+    def +(money: Money) : Money = {
+      val total = totalCents + money.totalCents
+      new Money(total/100, total % 100 )
+    }
+
+    def -(money: Money) : Money = {
+      val total = totalCents - money.totalCents
+      new Money(total/100, total % 100 )
+    }
+
+    def totalCents : BigInt = dollars * 100 + cents
+
+    override def toString() = dollars + "." + cents
+  }
+  println(Money(1, 75) + Money(0, 50))
+  println(Money(1, 75) - Money(0, 50))
 }
+
+
+
 
 
 
