@@ -16,6 +16,10 @@
 }
 //Exercise 3
 {
+  object Fraction {
+    def apply(n: Int, d: Int) = new Fraction(n, d)
+  }
+
   class Fraction(n: Int, d: Int) {
     private val num: Int = if (d == 0) 1 else n * sign(d) / gcd(n, d)
     private val den: Int = if (d == 0) 0 else d * sign(d) / gcd(n, d)
@@ -48,12 +52,19 @@
     }
   }
 
-  val a = new Fraction(1, 2)
-  val b = new Fraction(2, 8)
+  val a = Fraction(1, 2)
+  val b = Fraction(2, 8)
   println(a - b)
   println(a + b)
   println(a * a)
   println(b / a)
+}
+
+
+
+//Exercise 4
+{
+
 }
 
 
