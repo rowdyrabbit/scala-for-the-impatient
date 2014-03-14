@@ -101,6 +101,39 @@
 
 
 
+//Exercise 5
+{
+  class Table(private var tags:String) {
+
+    def |(item: String) = {
+      tags += "<td>"+ item + "</td>"
+      new Table(tags)
+    }
+    def ||(item: String) = {
+      tags += "</tr><tr><td>" + item + "</td>"
+      new Table(tags)
+    }
+
+    override def toString = "<table><tr>" + tags + "</tr></table>"
+  }
+
+  object Table {
+    def apply() = {
+      new Table("")
+    }
+  }
+  Table() | "Java" | "Scala" || "Gosling" | "Odersky" || "JVM" | "JVM, .NET"
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
