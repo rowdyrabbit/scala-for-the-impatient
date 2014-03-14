@@ -79,13 +79,30 @@
       new Money(total/100, total % 100 )
     }
 
+    def ==(money: Money) : Boolean = {
+      money.totalCents.equals(this.totalCents)
+    }
+
+    def <(that: Money) : Boolean = {
+      this.totalCents < that.totalCents
+    }
+
     def totalCents : BigInt = dollars * 100 + cents
 
     override def toString() = dollars + "." + cents
   }
   println(Money(1, 75) + Money(0, 50))
   println(Money(1, 75) - Money(0, 50))
+  println(Money(3, 77) == Money(3, 77))
+  println(Money(3, 77) < Money(3, 78))
+
+  //No, you should not supply * and / operators because you don't multiply or divide money by itself.
 }
+
+
+
+
+
 
 
 
