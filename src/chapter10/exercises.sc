@@ -28,11 +28,17 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
       }
     }
   }
+  
+  object OrderedPoint {
+    def apply(x: Int, y: Int) = {
+      new OrderedPoint(x, y)
+    }
+  }
 
-  val p1 = new OrderedPoint(1, 1)
-  val p2 = new OrderedPoint(1, -1)
-  val p3 = new OrderedPoint(2, 1)
-  val p4 = new OrderedPoint(1, 1)
+  val p1 = OrderedPoint(1, 1)
+  val p2 = OrderedPoint(1, -1)
+  val p3 = OrderedPoint(2, 1)
+  val p4 = OrderedPoint(1, 1)
 
   println(p2 < p3) //should be true  (p2 comes before p3 because p2's x value comes before p3's)
   println(p2 < p1) //should be true  (p2 comes before p1 because p2's y value is less than p1's)
