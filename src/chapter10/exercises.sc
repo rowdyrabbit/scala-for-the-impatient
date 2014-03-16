@@ -30,9 +30,7 @@ import java.io.{BufferedInputStream, InputStream, FileInputStream}
   }
   
   object OrderedPoint {
-    def apply(x: Int, y: Int) = {
-      new OrderedPoint(x, y)
-    }
+    def apply(x: Int, y: Int) = new OrderedPoint(x, y)
   }
 
   val p1 = OrderedPoint(1, 1)
