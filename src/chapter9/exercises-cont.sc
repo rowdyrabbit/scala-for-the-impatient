@@ -57,6 +57,10 @@ import scala.io.Source
 
 //Chapter 10
 {
+  object Person {
+    def apply(name: String) = new Person(name)
+  }
+  
   class Person(val name: String) extends Serializable {
     private val friends = new ArrayBuffer[Person]
     def addFriend(f : Person) = friends += f
@@ -66,9 +70,9 @@ import scala.io.Source
     }
   }
 
-  val harry = new Person("harry")
-  val jack = new Person("jack")
-  val mary = new Person("mary")
+  val harry = Person("harry")
+  val jack = Person("jack")
+  val mary = Person("mary")
   mary.addFriend(jack)
   mary.addFriend(harry)
 
